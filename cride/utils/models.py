@@ -19,7 +19,7 @@ class CRideModel(models.Model):
         auto_now_add=True,
         help_text='Date time on which the object was created'
     )
-    modifield = models.DateTimeField(
+    modified = models.DateTimeField(
         'modified at',
         auto_now=True,
         help_text='Date time on which the object was last modified'
@@ -31,4 +31,4 @@ class CRideModel(models.Model):
         abstract = True
 
         get_latest_by = 'created'
-        ordering = ['-created', '-modifield']
+        ordering = ['-created', '-modified']
