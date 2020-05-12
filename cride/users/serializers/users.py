@@ -84,7 +84,7 @@ class UserSignUpSerializer(serializers.Serializer):
         self.send_confirmation_email(user)
         return user
     
-    def send_confirmation_email(user):
+    def send_confirmation_email(self, user):
         """Send account verification link to given user."""
         verification_token = self.gen_verification_token(user)
         subject = 'Welcome @{}! Verify your account to start using Comparte Ride'.format(user.username)
