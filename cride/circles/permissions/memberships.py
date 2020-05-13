@@ -1,7 +1,7 @@
 """Circles permission classes."""
 
 # Django REST Framework
-from rest_framework.permission import BasePermission
+from rest_framework.permissions import BasePermission
 
 # Models
 from cride.circles.models import Membership

@@ -6,6 +6,9 @@ from django.db import models
 # Utilities
 from cride.utils.models import CRideModel
 
+# Managers
+from cride.circles.managers import InvitationManager
+
 
 class Invitation(CRideModel):
     """Circle invitation.
@@ -20,15 +23,15 @@ class Invitation(CRideModel):
     code = models.CharField(max_length=50, unique=True)
 
     issued_by = models.ForeignKey(
-        'user.User',
+        'users.User',
         on_delete=models.CASCADE,
-        help_text='circle member that is providing the invitation',
+        help_text='Circle member that is providing the invitation',
         related_name='issued_by'
     )
     used_by = models.ForeignKey(
-        'user.User',
+        'users.User',
         on_delete=models.CASCADE,
-        null=True
+        null=True,
         help_text='User that used the code to enter the circle'
     )
 
@@ -36,6 +39,9 @@ class Invitation(CRideModel):
 
     used = models.BooleanField(default=False)
     used_at = models.DateTimeField(blank=True, null=True)
+
+    # Manager
+    objects = InvitationManager()
 
     def __str__(self):
         """Return code and circle."""
