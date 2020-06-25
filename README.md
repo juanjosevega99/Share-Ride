@@ -17,4 +17,4 @@ docker-compose -f local.yml build
 docker-compose -f local.yml up
 ```
 #### Notes
-The creator of this project was [Pablo Trinidad](https://github.com/pablotrinidad) teacher and [Platzi](http://platzi.com/)
+The idea of this project was [Pablo Trinidad](https://github.com/pablotrinidad) teacher and [Platzi](http://platzi.com/)
